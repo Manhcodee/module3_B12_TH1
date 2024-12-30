@@ -148,7 +148,7 @@
             background: #2ecc71;
             color: #fff;
             border: none;
-            boder-radius: 5px;
+            border-radius: 5px;
             margin: 0 10px;
         }
 
@@ -160,10 +160,12 @@
         input {
             padding: 10px;
             width: 500px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
 
         .delete {
-            color: #ff1f1f;
+            color: #f94646;
         }
     </style>
 </head>
