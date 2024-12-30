@@ -149,6 +149,7 @@
             color: #fff;
             border: none;
             boder-radius: 5px;
+            margin: 0 10px;
         }
 
         .search-btn:hover {
