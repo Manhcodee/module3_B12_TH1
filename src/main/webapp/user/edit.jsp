@@ -68,7 +68,7 @@
         }
 
         th {
-            background-color: #007bff;
+            background-color: #34495e;
             color: white;
             font-weight: bold;
             text-align: center;

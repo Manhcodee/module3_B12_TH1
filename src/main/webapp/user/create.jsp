@@ -70,7 +70,7 @@
         }
 
         th {
-            background-color: #007bff;
+            background-color: #34495e;
             color: white;
             font-weight: bold;
             text-align: center;
@@ -94,7 +94,7 @@
         }
 
         input[type="submit"] {
-            background-color: #007bff;
+            background-color: #34495e;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -105,7 +105,8 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #34495e;
+            opacity: 0.8;
         }
     </style>
 </head>

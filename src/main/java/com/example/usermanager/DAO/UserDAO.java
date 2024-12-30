@@ -125,4 +125,46 @@ public class UserDAO implements IUserDAO {
             }
         }
     }
+
+    public List<User> searchUsersByCountry(String country) {
+        List<User> users = new ArrayList<>();
+        String SEARCH_BY_COUNTRY_SQL = "SELECT * FROM users WHERE country LIKE ?";
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BY_COUNTRY_SQL)) {
+            preparedStatement.setString(1, "%" + country + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String userCountry = rs.getString("country");
+                users.add(new User(id, name, email, userCountry));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return users;
+    }
+
+    public List<User> sortUsersByName() {
+        List<User> users = new ArrayList<>();
+        String SORT_BY_NAME_SQL = "SELECT * FROM users ORDER BY name";
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY_NAME_SQL)) {
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                users.add(new User(id, name, email, country));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return users;
+    }
+
 }
